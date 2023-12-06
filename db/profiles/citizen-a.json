@@ -1,0 +1,23 @@
+{
+  "personal_data": {
+    "name": "John",
+    "age": 17,
+    "relationship_status": "single"
+  },
+  "properties": [
+    {
+      "property_type": "House",
+      "property_features": {
+        "roof_area": 110,
+        "house_age": 15
+      }
+    },
+    {
+      "property_type": "Car",
+      "property_features": {
+        "car_age": 10,
+        "car_type": "gasoline"
+      }
+    }
+  ]
+}

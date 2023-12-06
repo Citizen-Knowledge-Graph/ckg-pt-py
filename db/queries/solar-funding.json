@@ -1,0 +1,32 @@
+{
+  "target_type": "person",
+  "personal_data": {
+    "age": {
+      "constraint_type": "min_max",
+      "constraint_features": {
+        "min": 18,
+        "max": 65
+      }
+    }
+  },
+  "properties": [
+    {
+      "property_type": "House",
+      "property_features": {
+        "roof_area": {
+            "constraint_type": "min",
+            "constraint_features": {
+              "min": 100
+            }
+        },
+        "house_age": {
+            "constraint_type": "max",
+            "constraint_features": {
+              "max": 20
+            }
+        }
+      }
+    }
+  ]
+}
+
