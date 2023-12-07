@@ -1,22 +1,22 @@
 {
-  "personal_data": {
-    "name": "John",
-    "age": 17,
-    "relationship_status": "single"
-  },
   "properties": [
     {
-      "property_type": "House",
-      "property_features": {
-        "roof_area": 110,
-        "house_age": 15
+      "property_class": "entity_type",
+      "property_fields": {
+        "value": "person"
       }
     },
     {
-      "property_type": "Car",
-      "property_features": {
-        "car_age": 10,
-        "car_type": "gasoline"
+      "property_class": "personal_data",
+      "property_fields": {
+        "age": 62
+      }
+    },
+    {
+      "property_class": "house",
+      "property_fields": {
+        "roof_area": 100,
+        "house_age": 20
       }
     }
   ]

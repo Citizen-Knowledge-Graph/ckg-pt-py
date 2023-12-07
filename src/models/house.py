@@ -1,25 +1,23 @@
-from pydantic import Field
+from pydantic import Field, BaseModel
 
-from src.models.property import Property, PropertyFeatures
-from src.models.constraint import MinConstraint, MaxConstraint
+from src.models.constraint import IntConstraint
 
 
-class HouseProperties(PropertyFeatures):
-    roof_area: float
+class HouseProperties(BaseModel):
+    roof_area: int
     house_age: int
 
 
-class HousePropertyConstraints(PropertyFeatures):
-    roof_area: MinConstraint
-    house_age: MaxConstraint
+class House(BaseModel):
+    property_class: str = Field("house", pattern=r"^house")
+    property_fields: HouseProperties
 
 
-class House(Property):
-    property_type: str = Field("House", pattern=r"^House$")
-    property_features: HouseProperties
+class HousePropertyConstraints(BaseModel):
+    roof_area: IntConstraint
+    house_age: IntConstraint
 
 
-class HouseConstraint(Property):
-    property_type: str = "House"
-    property_features: HousePropertyConstraints
-
+class HouseConstraint(BaseModel):
+    constraint_class: str = Field("house", pattern=r"^house")
+    constraint_fields: HousePropertyConstraints

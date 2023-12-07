@@ -15,31 +15,30 @@
     {
       "constraint_class": "personal_data",
       "constraint_fields": {
-        "age": {
-          "constraint_group": "int_constraint",
-          "constraint_type": "min_max",
+        "drivers_license": {
+          "constraint_group": "bool_constraint",
+          "constraint_type": "match",
           "constraint_features": {
-            "min": 18,
-            "max": 65
+            "match": true
           }
         }
       }
     },
     {
-      "constraint_class": "house",
+      "constraint_class": "car",
       "constraint_fields": {
-        "roof_area": {
-          "constraint_group": "int_constraint",
-          "constraint_type": "min",
-          "constraint_features": {
-            "min": 100
-          }
-        },
-        "house_age": {
+        "car_age": {
           "constraint_group": "int_constraint",
           "constraint_type": "max",
           "constraint_features": {
             "max": 20
+          }
+        },
+        "car_type": {
+          "constraint_group": "string_constraint",
+          "constraint_type": "exact",
+          "constraint_features": {
+            "exact": "electric"
           }
         }
       }

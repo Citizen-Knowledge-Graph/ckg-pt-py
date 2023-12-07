@@ -1,19 +1,23 @@
-from pydantic import conint, Field
-from enum import Enum
+from pydantic import conint, Field, BaseModel
 
-from src.models.property import Property, PropertyFeatures
-
-
-class CarType(Enum):
-    ELECTRIC = "electric"
-    GASOLINE = "gasoline"
+from src.models.constraint import IntConstraint, StringConstraint
 
 
-class CarProperties(PropertyFeatures):
+class CarProperties(BaseModel):
     car_age: conint(gt=0)
-    car_type: CarType
+    car_type: str
 
 
-class Car(Property):
-    property_type: str = Field("Car", pattern=r"^Car$")
-    property_features: CarProperties
+class Car(BaseModel):
+    property_class: str = Field("car", pattern=r"^car$")
+    property_fields: CarProperties
+
+
+class CarPropertyConstraints(BaseModel):
+    car_age: IntConstraint
+    car_type: StringConstraint
+
+
+class CarConstraint(BaseModel):
+    constraint_class: str = Field("car", pattern=r"^car$")
+    constraint_fields: CarPropertyConstraints

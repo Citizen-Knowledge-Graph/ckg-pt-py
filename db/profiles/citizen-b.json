@@ -1,0 +1,32 @@
+{
+  "properties": [
+    {
+      "property_class": "entity_type",
+      "property_fields": {
+        "value": "person"
+      }
+    },
+    {
+      "property_class": "personal_data",
+        "property_fields": {
+            "age": 34,
+            "residence": "New York",
+            "drivers_license": true
+        }
+    },
+    {
+      "property_class": "house",
+      "property_fields": {
+        "house_age": 20,
+        "roof_area": 100
+      }
+    },
+    {
+      "property_class": "car",
+      "property_fields": {
+        "car_age": 12,
+        "car_type": "electric"
+      }
+    }
+  ]
+}
